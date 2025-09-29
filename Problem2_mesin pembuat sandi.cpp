@@ -21,25 +21,25 @@ string myReverse(const string &s) {
 }
 
 string makePassword(const string &word) {
-    // 1. Buat string konsonan
+    
     string consonants = "";
     for (char c : word) {
         if (!isVowel(c)) consonants += c;
     }
 
-    // 2. Balik string konsonan
+    
     string revConsonants = myReverse(consonants);
 
-    // 3. Ambil ASCII dari huruf pertama
+    
     if (word.empty()) return revConsonants;
     int asciiVal = (int)word[0];
     string asciiStr = to_string(asciiVal);
 
-    // 4. Tentukan posisi sisip (ceil(n/2))
+    
     int n = consonants.size();
     int pos = (n + 1) / 2; 
 
-    // 5. Sisipkan ASCII
+    
     string result = revConsonants.substr(0, pos) + asciiStr + revConsonants.substr(pos);
     return result;
 }
