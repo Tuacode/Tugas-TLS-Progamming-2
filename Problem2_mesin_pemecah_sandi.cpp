@@ -35,7 +35,7 @@ int main() {
     int L = pwd.size();
     bool found = false;
 
-    // Coba semua substring digit
+    
     for (int i = 0; i < L; i++) {
         for (int j = i + 1; j <= L; j++) {
             string sub = pwd.substr(i, j - i);
@@ -45,10 +45,10 @@ int main() {
             int n = L - digitLen;
             int pos = (n + 1) / 2; 
 
-            if (pos != i) continue; // digit harus di posisi yang benar
+            if (pos != i) continue; 
 
             int asciiVal = stoi(sub);
-            if (asciiVal < 32 || asciiVal > 126) continue; // hanya printable
+            if (asciiVal < 32 || asciiVal > 126) continue; 
 
             char firstChar = (char)asciiVal;
 
